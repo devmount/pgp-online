@@ -26,7 +26,30 @@
 			width: 960px;
 			height: 540px;
 		}
-		.description {
+		.video-link {
+			display: block;
+			background: #383737;
+			text-decoration: none;
+			color: white;
+			font-family: 'Roboto', sans-serif;
+			font-size: 35px;
+			padding: 20px;
+			box-sizing: border-box;
+			transition: .3s background;
+		}
+		.video-link:hover {
+			background: #ff0000;
+		}
+		.video-link * {
+			vertical-align: middle;
+		}
+		.video-link .logo-youtube {
+			margin-left: 10px;
+		}
+		.video-link .external {
+			float: right;
+		}
+		.tiles {
 			height: 250px;
 			margin-top: 15px;
 			display: flex;
@@ -37,16 +60,17 @@
 			display: flex;
 			flex-direction: column;
 			justify-content: flex-start;
-			width: 30%;
+			width: 32%;
 			padding: 10px;
 			box-sizing: border-box;
 			background: #5e8b6a;
 			text-decoration: none;
 			color: white;
-			transition: .3s transform;
+			transition: .3s transform, .3s background;
 		}
 		.card:hover {
 			transform: scale(1.05);
+			background: #383737;
 		}
 		.card ion-icon {
 			font-size: 60px;
@@ -69,14 +93,26 @@
 			}
 		}
 		@media (max-width: 640px) {
-			.description {
+			.video-link {
+				font-size: 25px;
+				padding: 15px;
+			}
+			.tiles {
 				height: auto;
 				flex-direction: column;
 			}
 			.card {
+				display: block;
 				width: 100%;
 				text-align: center;
 				margin-bottom: 5px;
+			}
+			.card ion-icon {
+				float: left;
+				margin: 10px;
+			}
+			.card h2 {
+				font-size: 30px;
 			}
 		}
 	</style>
@@ -84,7 +120,14 @@
 <body>
 	<div class="video">
 		<iframe src="https://www.youtube.com/embed/kYOob8VjWrk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-		<div class="description">
+		<div class="direct">
+			<a class="video-link" href="https://youtu.be/kYOob8VjWrk" target="_blank">
+				<span class="title">Direkt zu Youtube</span>
+				<ion-icon class="logo-youtube" name="logo-youtube"></ion-icon>
+				<ion-icon class="external" name="open-outline"></ion-icon>
+			</a>
+		</div>
+		<div class="tiles">
 			<a class="card" href="https://paulus-gemeinde.berlin" target="_blank">
 				<ion-icon name="home-outline"></ion-icon>
 				<h2>Paulus-Gemeinde Pankow</h2>
